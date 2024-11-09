@@ -39,8 +39,8 @@ public class AsyncImage
 		pixels[y * width + x] = color;
 	}
 
-	public Color[] GetPixels()
-	{
-		return pixels;
-	}
+	// public Color[] GetPixels()
+	// {
+	// 	return pixels;
+	// }
 }
