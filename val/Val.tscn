@@ -20,3 +20,6 @@ script = ExtResource("2_6l5qp")
 
 [node name="RotateToVelocity" type="Node" parent="PlayerRig"]
 script = ExtResource("1_wd1xc")
+
+[node name="Hips" type="Sprite2D" parent="PlayerRig"]
+script = ExtResource("2_6l5qp")
