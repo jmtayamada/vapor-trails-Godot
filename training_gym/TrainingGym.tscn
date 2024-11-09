@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=4 uid="uid://ym7n64qf3srt"]
+
+[ext_resource type="Texture2D" uid="uid://31n5cvx30g0m" path="res://training_gym/tilemaps/testBlock_generated.png" id="1_n0rw5"]
+[ext_resource type="PackedScene" uid="uid://dpalbslv4yatx" path="res://val/Val.tscn" id="2_4ulkj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fskfj"]
+texture = ExtResource("1_n0rw5")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+
+[sub_resource type="TileSet" id="TileSet_jno8w"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_fskfj")
+
+[node name="TrainingGym" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAkAAAABAAEAAAABAAkAAAABAAAAAAACAAkAAAABAAAAAAADAAkAAAABAAAAAAAEAAkAAAABAAAAAAAFAAkAAAABAAAAAAAGAAkAAAABAAAAAAAHAAkAAAABAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAAOAAkAAAABAAAAAAAPAAkAAAABAAAAAAAQAAkAAAABAAAAAAARAAkAAAABAAEAAAAAAAgAAAAAAAEAABAAAAcAAAAAAAEAABAAAAYAAAAAAAEAABARAAgAAAAAAAEAAAD+/wkAAAABAAAAAAD9/wkAAAABAAAAAAD8/wkAAAABAAAAAAD7/wkAAAABAAAAAAD6/wkAAAABAAAAAAD5/wkAAAABAAAAAAD4/wkAAAABAAAAAAD3/wkAAAABAAAAAAD2/wkAAAABAAAAAAD1/wkAAAABAAAAAAD0/wkAAAABAAAAAADz/wkAAAABAAAAAADy/wkAAAABAAAAAADx/wkAAAABAAAAAADw/wkAAAABAAAAAADv/wkAAAABAAAAAADu/wkAAAABAAEAAADu////AAAAAAEAABDu/wAAAAAAAAEAABDu/wEAAAAAAAEAABDu/wIAAAAAAAEAABDu/wMAAAAAAAEAABDu/wQAAAAAAAEAABDu/wUAAAAAAAEAABDu/wYAAAAAAAEAABDu/wcAAAAAAAEAABDu/wgAAAAAAAEAABD//wgAAAAAAAEAAAD//wcAAAAAAAEAAAD//wYAAAAAAAEAAAD//wkAAAABAAEAAAD//wUAAAAAAAAAAAAAAAUAAAAAAAAAABA=")
+tile_set = SubResource("TileSet_jno8w")
+rendering_quadrant_size = 64
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+
+[node name="Val" parent="." instance=ExtResource("2_4ulkj")]
+position = Vector2(-600, 390)
