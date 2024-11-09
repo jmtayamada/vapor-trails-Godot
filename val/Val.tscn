@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpalbslv4yatx"]
+[gd_scene load_steps=5 format=3 uid="uid://dpalbslv4yatx"]
 
+[ext_resource type="Script" path="res://scripts/vapor_core/sprite_smoother/SpriteSmoother.cs" id="1_d0omq"]
 [ext_resource type="Script" path="res://scripts/vapor_core/visual/ToonMotion.cs" id="1_gufpi"]
 [ext_resource type="Script" path="res://scripts/vapor_core/RotateToVelocity.cs" id="1_wd1xc"]
 [ext_resource type="Script" path="res://scripts/vapor_core/HardFlip.cs" id="2_6l5qp"]
@@ -9,6 +10,7 @@
 [node name="PlayerRig" type="Node2D" parent="."]
 
 [node name="SpriteSmoother" type="Node" parent="PlayerRig"]
+script = ExtResource("1_d0omq")
 
 [node name="ToonMotion" type="Node" parent="PlayerRig"]
 script = ExtResource("1_gufpi")
