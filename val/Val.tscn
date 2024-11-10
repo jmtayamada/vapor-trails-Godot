@@ -30,8 +30,12 @@ texture = ExtResource("5_fib6c")
 script = ExtResource("2_6l5qp")
 
 [node name="Chest" type="Sprite2D" parent="PlayerRig/Hips"]
+z_index = 1
 position = Vector2(0.5, -14.5)
 texture = ExtResource("6_bee6q")
 
 [node name="HardFlip" type="Node" parent="PlayerRig/Hips/Chest"]
 script = ExtResource("2_6l5qp")
+
+[node name="FrontBicep" type="Sprite2D" parent="PlayerRig/Hips/Chest"]
+z_index = 4

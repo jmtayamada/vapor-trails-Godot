@@ -19,6 +19,23 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Vapor Trails"
 
+[layer_names]
+
+2d_render/layer_1="Default"
+2d_render/layer_2="TransparentFX"
+2d_render/layer_3="IgnoreRaycast"
+2d_render/layer_4="Ground"
+2d_render/layer_5="Water"
+2d_render/layer_6="UI"
+2d_render/layer_7="Minimap"
+2d_render/layer_8="EnemyColiders"
+2d_render/layer_9="Hitboxes"
+2d_render/layer_10="Player"
+2d_render/layer_11="Projectiles"
+2d_render/layer_12="FootfallZones"
+2d_render/layer_13="CameraCollision"
+2d_render/layer_14="MapFog"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
