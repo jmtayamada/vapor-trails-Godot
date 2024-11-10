@@ -4,12 +4,12 @@ public partial class HardFlip : Node
 {
 	Vector2 s;
 
-	public override void _Ready()
+	public override void _Process(double delta)
 	{
-		ProcessPriority = 10;
+		CallDeferred("LateUpdate", delta);
 	}
 
-	public override void _Process(double _delta)
+	public void LateUpdate(double _delta)
 	{
 		s = GetParent<Node2D>().Scale;
 		if (s.X > 0 && s.X < 1)

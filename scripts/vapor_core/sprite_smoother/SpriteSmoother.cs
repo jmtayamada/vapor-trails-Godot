@@ -13,27 +13,21 @@ public partial class SpriteSmoother : Node
 
 	List<SmoothSpriteChild> children = new List<SmoothSpriteChild>();
 
-	void Start()
+	public override void _Ready()
 	{
-		List<Sprite2D> SpriteChildren = new List<Sprite2D>();
-		for (int i = 0; i < GetParent().GetChildCount(); i++)
+		foreach (Sprite2D s in GetParent().FindChildren("*", "Sprite2D"))
 		{
-			SpriteChildren.Add(GetParent().GetChild<Sprite2D>(i));
-		}
-
-		foreach (Sprite2D s in SpriteChildren)
-		{
-			if (s.IsClass("NoSmoothSprite"))
+			if (s.IsClass("NoSmoothSprite") || NodeHelper.getComponent<NoSmoothSprite>(s) != default(NoSmoothSprite))
 			{
 				continue;
 			}
 			SmoothSpriteChild newSmoothSpriteChild = new SmoothSpriteChild();
+			s.AddChild(newSmoothSpriteChild);
 			newSmoothSpriteChild.Initialize(this);
-			s.ReplaceBy(newSmoothSpriteChild, true);
 			newSmoothSpriteChild.Name = s.Name;
-			s.Free();
 			children.Add(newSmoothSpriteChild);
 		}
+		GD.Print(children.Count);
 	}
 
 	Task<AsyncImage> UpscaleTexture(AsyncImage input)
@@ -140,7 +134,6 @@ public partial class SpriteSmoother : Node
 	{
 		AsyncImage upscaledAsync = await UpscaleTexture(texture);
 		Image upscaled = Image.CreateEmpty(upscaledAsync.width, upscaledAsync.height, true, Image.Format.Rgba8);
-		upscaled.GenerateMipmaps();
 		for (int x = 0; x < upscaledAsync.width; x++)
 		{
 			for (int y = 0; y < upscaledAsync.height; y++)

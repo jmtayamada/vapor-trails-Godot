@@ -1,5 +1,5 @@
 using Godot;
-public partial class NoSmoothSprite : Sprite2D
+public partial class NoSmoothSprite : Node
 {
 
 }

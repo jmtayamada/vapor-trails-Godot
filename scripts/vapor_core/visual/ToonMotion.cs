@@ -14,7 +14,6 @@ public partial class ToonMotion : Node
 
     public override void _Ready()
     {
-        ProcessPriority = 10;
         CreateTargetList(GetParent<Node2D>());
     }
 
@@ -35,7 +34,12 @@ public partial class ToonMotion : Node
         }
     }
 
-    public override void _Process(double _delta)
+    public override void _Process(double delta)
+    {
+        CallDeferred("LateUpdate", delta);
+    }
+
+    public void LateUpdate(double _delta)
     {
         if (forceUpdateThisFrame || GetUnscaledTime() - lastUpdateTime > 1f / fps)
         {

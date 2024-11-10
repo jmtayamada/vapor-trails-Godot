@@ -4,6 +4,9 @@ using Godot;
 public partial class RotateToVelocity : Node
 {
     [Export]
+    public bool enabled;
+    private bool was_enabled;
+    [Export]
     public RigidBody2D rb2d;
 
     // this is the default if entities are normally facing up
@@ -12,15 +15,19 @@ public partial class RotateToVelocity : Node
 
     public override void _Ready()
     {
-        ProcessPriority = 10;
-        GD.Print(ProcessPriority);
         if (rb2d == null)
         {
             GD.PrintErr("RigidBody2D not found!");
         }
     }
 
-    public override void _Process(double _delta)
+    public override void _Process(double delta)
+    {
+        if (!enabled) { return; }
+        CallDeferred("LateUpdate", delta);
+    }
+
+    public void LateUpdate(double _delta)
     {
         if (rb2d == null) { return; }
 
@@ -38,14 +45,7 @@ public partial class RotateToVelocity : Node
 
     public void Enabled(bool enabled)
     {
-        if (enabled)
-        {
-            ProcessMode = ProcessModeEnum.Inherit;
-        }
-        else
-        {
-            GetParent<Node2D>().RotationDegrees = 0;
-            ProcessMode = ProcessModeEnum.Disabled;
-        }
+        this.enabled = enabled;
+        if (!enabled) { GetParent<Node2D>().RotationDegrees = 0; }
     }
 }
