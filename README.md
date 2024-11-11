@@ -15,6 +15,6 @@ ex.
 
 "void Update()" -> "public override void _Process(double delta)"
 
-"void LateUpdate()" -> "public void LateUpdate(double delta)" also include a "CallDefferred("LateUpdate", delta);" in the "_Ready()" function
+"void LateUpdate()" -> "public void LateUpdate(double delta)" also include a "CallDeferred("LateUpdate", delta);" in the "_Ready()" function
 
 OnEnable and OnDisable functions will need to be manually implemented, see RotateToVelocity.cs file for an example of this.
