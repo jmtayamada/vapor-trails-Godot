@@ -4,6 +4,7 @@
 Replace all "using Unity.___;" lines with "using Godot;"
 
 "public class ClassName : MonoBehaviour" -> "public partial class ClassName : Node"
+Rather than attaching scripts to nodes, create a child of the type node, and attach the script to that child node
 
 Any variables that would be visible in the editor must now have "[Export]" in the previous line
 ex.

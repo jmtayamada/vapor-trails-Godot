@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpalbslv4yatx"]
+[gd_scene load_steps=8 format=3 uid="uid://dpalbslv4yatx"]
 
 [ext_resource type="Script" path="res://scripts/vapor_core/sprite_smoother/SpriteSmoother.cs" id="1_d0omq"]
 [ext_resource type="Script" path="res://scripts/vapor_core/visual/ToonMotion.cs" id="1_gufpi"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/vapor_core/HardFlip.cs" id="2_6l5qp"]
 [ext_resource type="Texture2D" uid="uid://b83ye02xotlkx" path="res://val/val_atlas/val_hips.tres" id="5_fib6c"]
 [ext_resource type="Texture2D" uid="uid://bmoti32i3saxy" path="res://val/val_atlas/val_chest.tres" id="6_bee6q"]
+[ext_resource type="Texture2D" uid="uid://5ebxxwlpk0f5" path="res://val/val_atlas/front_thigh.tres" id="7_4ei2o"]
 
 [node name="Val" type="Node2D"]
 
@@ -31,11 +32,15 @@ script = ExtResource("2_6l5qp")
 
 [node name="Chest" type="Sprite2D" parent="PlayerRig/Hips"]
 z_index = 1
-position = Vector2(0.5, -14.5)
+position = Vector2(0.5, -13.5)
 texture = ExtResource("6_bee6q")
 
 [node name="HardFlip" type="Node" parent="PlayerRig/Hips/Chest"]
 script = ExtResource("2_6l5qp")
 
-[node name="FrontBicep" type="Sprite2D" parent="PlayerRig/Hips/Chest"]
-z_index = 4
+[node name="FrontThigh" type="Sprite2D" parent="PlayerRig/Hips"]
+position = Vector2(3, 7.5)
+texture = ExtResource("7_4ei2o")
+
+[node name="HardFlip" type="Node" parent="PlayerRig/Hips/FrontThigh"]
+script = ExtResource("2_6l5qp")
