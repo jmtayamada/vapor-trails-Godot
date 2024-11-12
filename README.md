@@ -7,6 +7,8 @@ Replace all "using Unity.___;" lines with "using Godot;"
 Rather than attaching scripts to nodes, create a child of the type node, and attach the script to that child node.
 Scripts that would normally affect the object they're attached to (i.e. changing scale, position, etc. should now be changed to affect the parent instead, with GetParent().function())
 
+"public class ClassName : ScriptableObject" -> "public partial class ClassName : Resource"
+
 Any variables that would be visible in the editor must now have "[Export]" in the previous line
 ex.
 "public bool enabled;" ->  "[Export]
