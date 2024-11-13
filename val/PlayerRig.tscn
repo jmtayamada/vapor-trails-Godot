@@ -1,0 +1,343 @@
+[gd_scene load_steps=33 format=3 uid="uid://cxhrud2j6p22s"]
+
+[ext_resource type="Script" path="res://scripts/vapor_core/sprite_smoother/SpriteSmoother.cs" id="1_4e1a3"]
+[ext_resource type="Script" path="res://scripts/vapor_core/visual/ToonMotion.cs" id="2_k0txe"]
+[ext_resource type="Script" path="res://scripts/vapor_core/HardFlip.cs" id="3_3k8yk"]
+[ext_resource type="Script" path="res://scripts/vapor_core/RotateToVelocity.cs" id="4_bh8qd"]
+[ext_resource type="Texture2D" uid="uid://b83ye02xotlkx" path="res://val/val_atlas/hips.tres" id="5_t3ruk"]
+[ext_resource type="Texture2D" uid="uid://bmoti32i3saxy" path="res://val/val_atlas/chest.tres" id="6_5fgo4"]
+[ext_resource type="Texture2D" uid="uid://b765i2fppr5ya" path="res://val/val_atlas/front_bicep.tres" id="7_m8y4o"]
+[ext_resource type="Texture2D" uid="uid://53p0s6atyq5y" path="res://val/val_atlas/front_forearm.tres" id="8_swyav"]
+[ext_resource type="Texture2D" uid="uid://c4w4q4mg08r7g" path="res://val/val_atlas/front_hand.tres" id="9_qq5ry"]
+[ext_resource type="Texture2D" uid="uid://dhp86kj4t3r5b" path="res://val/jetflare/jet_flare_0.tres" id="10_4oo8i"]
+[ext_resource type="Texture2D" uid="uid://cpn4qobunh1og" path="res://andromeda/rocket_flares/rocket_flares_0.tres" id="10_jrimp"]
+[ext_resource type="Texture2D" uid="uid://beprhqhr3n2e0" path="res://val/val_atlas/front_claw.tres" id="10_o8xn2"]
+[ext_resource type="Texture2D" uid="uid://co2vnvalu6opp" path="res://val/val_atlas/back_claw.tres" id="11_e1ihe"]
+[ext_resource type="Texture2D" uid="uid://cff7bp2d3qr1i" path="res://val/val_atlas/back_bicep.tres" id="12_mwtoc"]
+[ext_resource type="Texture2D" uid="uid://brfi4shnn7tye" path="res://val/val_atlas/back_forearm.tres" id="13_yqxds"]
+[ext_resource type="Texture2D" uid="uid://cveunvo4v4o62" path="res://val/val_atlas/back_hand.tres" id="14_bdafv"]
+[ext_resource type="Texture2D" uid="uid://5ebxxwlpk0f5" path="res://val/val_atlas/front_thigh.tres" id="15_t1f5s"]
+[ext_resource type="Texture2D" uid="uid://kvasy88ulpvo" path="res://val/val_atlas/front_calf.tres" id="16_082me"]
+[ext_resource type="Texture2D" uid="uid://d06rk2n0nkvv8" path="res://val/val_atlas/near_wing_1.tres" id="16_qgy0v"]
+[ext_resource type="Texture2D" uid="uid://dldvbi4iwmguj" path="res://val/val_atlas/near_wing_2.tres" id="17_pa3qx"]
+[ext_resource type="Texture2D" uid="uid://chgta5owk6jiu" path="res://val/val_atlas/front_foot.tres" id="17_u1j1a"]
+[ext_resource type="Script" path="res://addons/unity_components/constraints/RotationConstraint2D.cs" id="18_na1u2"]
+[ext_resource type="Texture2D" uid="uid://bvt5r8ej80emx" path="res://effects/foot_fall_dust/footfalldust_0.tres" id="19_kpu0j"]
+[ext_resource type="Script" path="res://scripts/vapor_core/sprite_smoother/NoSmoothSprite.cs" id="20_k30b8"]
+[ext_resource type="Texture2D" uid="uid://b2dcxyhj2yhp0" path="res://val/val_atlas/head.tres" id="21_qu3cr"]
+[ext_resource type="Texture2D" uid="uid://d28hvurjit63i" path="res://val/val_atlas/back_thigh.tres" id="21_vc2sj"]
+[ext_resource type="Script" path="res://addons/unity_components/constraints/LookAtConstraint2D.cs" id="22_1blu6"]
+[ext_resource type="Texture2D" uid="uid://d17tgunjqo6vy" path="res://val/val_atlas/back_calf.tres" id="22_oeyvr"]
+[ext_resource type="Texture2D" uid="uid://clcr36us4qlm2" path="res://val/val_atlas/back_foot.tres" id="23_l0imx"]
+[ext_resource type="Script" path="res://scripts/player/PlayerLookAt.cs" id="23_lvwvp"]
+[ext_resource type="Texture2D" uid="uid://2cyr8j8s72nv" path="res://val/val_hair/val_hair_0.tres" id="24_5kilx"]
+[ext_resource type="Texture2D" uid="uid://drl5beeb8j022" path="res://val/val_atlas/white_eye_overlay.tres" id="25_qsc1j"]
+
+[node name="PlayerRig" type="Node2D"]
+
+[node name="SpriteSmoother" type="Node" parent="."]
+script = ExtResource("1_4e1a3")
+
+[node name="ToonMotion" type="Node" parent="."]
+script = ExtResource("2_k0txe")
+
+[node name="HardFlip" type="Node" parent="."]
+script = ExtResource("3_3k8yk")
+
+[node name="RotateToVelocity" type="Node" parent="."]
+script = ExtResource("4_bh8qd")
+
+[node name="Hips" type="Sprite2D" parent="."]
+texture = ExtResource("5_t3ruk")
+
+[node name="HardFlip" type="Node" parent="Hips"]
+script = ExtResource("3_3k8yk")
+
+[node name="Chest" type="Sprite2D" parent="Hips"]
+z_index = 1
+position = Vector2(0.5, -13.5)
+texture = ExtResource("6_5fgo4")
+
+[node name="HardFlip" type="Node" parent="Hips/Chest"]
+script = ExtResource("3_3k8yk")
+
+[node name="Wings" type="Node2D" parent="Hips/Chest"]
+
+[node name="RotationConstraint2D" type="Node" parent="Hips/Chest/Wings"]
+script = ExtResource("18_na1u2")
+Lock = true
+
+[node name="FalseFarWing" type="Node2D" parent="Hips/Chest/Wings"]
+process_mode = 4
+visible = false
+position = Vector2(-0.5, 3.5)
+scale = Vector2(-1, 1)
+
+[node name="2" type="Sprite2D" parent="Hips/Chest/Wings/FalseFarWing"]
+self_modulate = Color(0.678431, 0.0941176, 0.47451, 1)
+z_index = -1
+position = Vector2(8.5, 6.5)
+rotation = -0.129154
+texture = ExtResource("17_pa3qx")
+
+[node name="1" type="Sprite2D" parent="Hips/Chest/Wings/FalseFarWing"]
+self_modulate = Color(0.384314, 0.141176, 0.380392, 1)
+z_index = -1
+position = Vector2(8.5, 1.5)
+texture = ExtResource("16_qgy0v")
+
+[node name="RocketFlare" type="Sprite2D" parent="Hips/Chest/Wings/FalseFarWing/1"]
+editor_description = "Needs to add animator"
+z_index = -21
+position = Vector2(-19, 9)
+rotation = 0.785398
+scale = Vector2(0.3, 0.4)
+texture = ExtResource("10_jrimp")
+
+[node name="DashFlare" type="Sprite2D" parent="Hips/Chest/Wings/FalseFarWing/1/RocketFlare"]
+visible = false
+z_index = 50
+position = Vector2(-3.8147e-06, -49.4975)
+texture = ExtResource("10_4oo8i")
+
+[node name="NoSmoothSprite" type="Node" parent="Hips/Chest/Wings/FalseFarWing/1/RocketFlare/DashFlare"]
+script = ExtResource("20_k30b8")
+
+[node name="RotationConstraint2D" type="Node" parent="Hips/Chest/Wings/FalseFarWing/1/RocketFlare/DashFlare" node_paths=PackedStringArray("Source")]
+script = ExtResource("18_na1u2")
+Source = NodePath("../../../../../../..")
+
+[node name="BoosterSmoke" type="Node2D" parent="Hips/Chest/Wings/FalseFarWing/1/RocketFlare"]
+editor_description = "Add particle system
+"
+visible = false
+
+[node name="DashFlare" type="Sprite2D" parent="Hips/Chest/Wings/FalseFarWing"]
+visible = false
+z_index = 50
+texture = ExtResource("10_4oo8i")
+
+[node name="NoSmoothSprite" type="Node" parent="Hips/Chest/Wings/FalseFarWing/DashFlare"]
+script = ExtResource("20_k30b8")
+
+[node name="JetFlare" type="Sprite2D" parent="Hips/Chest/Wings/FalseFarWing"]
+visible = false
+z_index = 50
+position = Vector2(15, 13)
+rotation = 0.0628319
+texture = ExtResource("10_4oo8i")
+
+[node name="FarWing" type="Node2D" parent="Hips/Chest/Wings"]
+
+[node name="2" type="Sprite2D" parent="Hips/Chest/Wings/FarWing"]
+self_modulate = Color(0.678431, 0.0941176, 0.47451, 1)
+z_index = -1
+position = Vector2(-2.5, 5.5)
+rotation = -0.129154
+texture = ExtResource("17_pa3qx")
+
+[node name="1" type="Sprite2D" parent="Hips/Chest/Wings/FarWing"]
+self_modulate = Color(0.384314, 0.141176, 0.380392, 1)
+z_index = -1
+position = Vector2(-2, 2)
+texture = ExtResource("16_qgy0v")
+
+[node name="RocketFlare" type="Sprite2D" parent="Hips/Chest/Wings/FarWing/1"]
+process_mode = 4
+editor_description = "Needs to add animator"
+visible = false
+z_index = -21
+position = Vector2(-22.5, 9.5)
+rotation = 0.785398
+scale = Vector2(0.3, 0.4)
+texture = ExtResource("10_jrimp")
+
+[node name="DashFlare" type="Sprite2D" parent="Hips/Chest/Wings/FarWing/1/RocketFlare"]
+visible = false
+z_index = 50
+position = Vector2(-3.8147e-06, -49.4975)
+texture = ExtResource("10_4oo8i")
+
+[node name="NoSmoothSprite" type="Node" parent="Hips/Chest/Wings/FarWing/1/RocketFlare/DashFlare"]
+script = ExtResource("20_k30b8")
+
+[node name="RotationConstraint2D" type="Node" parent="Hips/Chest/Wings/FarWing/1/RocketFlare/DashFlare"]
+script = ExtResource("18_na1u2")
+
+[node name="BoosterSmoke" type="Node2D" parent="Hips/Chest/Wings/FarWing/1/RocketFlare"]
+editor_description = "Add particle system
+"
+visible = false
+
+[node name="NearWing" type="Node2D" parent="Hips/Chest/Wings"]
+
+[node name="2" type="Sprite2D" parent="Hips/Chest/Wings/NearWing"]
+self_modulate = Color(0.678431, 0.0941176, 0.47451, 1)
+z_index = -1
+position = Vector2(8.5, 6.5)
+rotation = -0.129154
+texture = ExtResource("17_pa3qx")
+
+[node name="1" type="Sprite2D" parent="Hips/Chest/Wings/NearWing"]
+self_modulate = Color(0.384314, 0.141176, 0.380392, 1)
+z_index = -1
+position = Vector2(8.5, 1.5)
+texture = ExtResource("16_qgy0v")
+
+[node name="RocketFlare" type="Sprite2D" parent="Hips/Chest/Wings/NearWing/1"]
+process_mode = 4
+editor_description = "Needs to add animator"
+visible = false
+z_index = -21
+position = Vector2(-19, 9)
+rotation = 0.785398
+scale = Vector2(0.3, 0.4)
+texture = ExtResource("10_jrimp")
+
+[node name="DashFlare" type="Sprite2D" parent="Hips/Chest/Wings/NearWing/1/RocketFlare"]
+visible = false
+z_index = 50
+position = Vector2(-3.8147e-06, -49.4975)
+texture = ExtResource("10_4oo8i")
+
+[node name="NoSmoothSprite" type="Node" parent="Hips/Chest/Wings/NearWing/1/RocketFlare/DashFlare"]
+script = ExtResource("20_k30b8")
+
+[node name="RotationConstraint2D" type="Node" parent="Hips/Chest/Wings/NearWing/1/RocketFlare/DashFlare"]
+script = ExtResource("18_na1u2")
+
+[node name="BoosterSmoke" type="Node2D" parent="Hips/Chest/Wings/NearWing/1/RocketFlare"]
+editor_description = "Add particle system
+"
+visible = false
+
+[node name="DashFlare" type="Sprite2D" parent="Hips/Chest/Wings/NearWing"]
+process_mode = 4
+visible = false
+z_index = 50
+texture = ExtResource("10_4oo8i")
+
+[node name="NoSmoothSprite" type="Node" parent="Hips/Chest/Wings/NearWing/DashFlare"]
+script = ExtResource("20_k30b8")
+
+[node name="BackBicep" type="Sprite2D" parent="Hips/Chest"]
+z_index = -1
+position = Vector2(-6.5, -0.5)
+texture = ExtResource("12_mwtoc")
+
+[node name="BackForearm" type="Sprite2D" parent="Hips/Chest/BackBicep"]
+position = Vector2(-0.5, 14)
+texture = ExtResource("13_yqxds")
+
+[node name="BackHand" type="Sprite2D" parent="Hips/Chest/BackBicep/BackForearm"]
+position = Vector2(-1, 7)
+texture = ExtResource("14_bdafv")
+
+[node name="FrontBicep" type="Sprite2D" parent="Hips/Chest"]
+position = Vector2(8, 0.5)
+texture = ExtResource("7_m8y4o")
+
+[node name="FrontForearm" type="Sprite2D" parent="Hips/Chest/FrontBicep"]
+position = Vector2(0, 14)
+texture = ExtResource("8_swyav")
+
+[node name="FrontHand" type="Sprite2D" parent="Hips/Chest/FrontBicep/FrontForearm"]
+position = Vector2(0, 7)
+texture = ExtResource("9_qq5ry")
+
+[node name="Claws" type="Node" parent="Hips/Chest/FrontBicep/FrontForearm/FrontHand"]
+editor_description = "Needs enable on item script"
+
+[node name="FrontClaw" type="Sprite2D" parent="Hips/Chest/FrontBicep/FrontForearm/FrontHand/Claws"]
+visible = false
+z_index = 1
+position = Vector2(8.5, 2)
+texture = ExtResource("10_o8xn2")
+
+[node name="WallSlideSparks" type="Node" parent="Hips/Chest/FrontBicep/FrontForearm/FrontHand/Claws/FrontClaw"]
+editor_description = "Needs particle system"
+
+[node name="BackClaw" type="Sprite2D" parent="Hips/Chest/FrontBicep/FrontForearm/FrontHand/Claws"]
+visible = false
+position = Vector2(9.5, -1)
+texture = ExtResource("11_e1ihe")
+
+[node name="Head" type="Sprite2D" parent="Hips/Chest"]
+position = Vector2(-1, -14.5)
+texture = ExtResource("21_qu3cr")
+
+[node name="RotationConstraint2D" type="Node" parent="Hips/Chest/Head" node_paths=PackedStringArray("Source")]
+script = ExtResource("18_na1u2")
+Source = NodePath("../../..")
+
+[node name="HardFlip" type="Node" parent="Hips/Chest/Head"]
+script = ExtResource("3_3k8yk")
+
+[node name="PlayerLookAt" type="Node" parent="Hips/Chest/Head"]
+script = ExtResource("23_lvwvp")
+
+[node name="LookAtConstraint2D" type="Node" parent="Hips/Chest/Head" node_paths=PackedStringArray("Source")]
+process_mode = 4
+script = ExtResource("22_1blu6")
+Source = NodePath("")
+
+[node name="Hair" type="Sprite2D" parent="Hips/Chest/Head"]
+position = Vector2(-1.5, 0.5)
+texture = ExtResource("24_5kilx")
+
+[node name="GunEyes" type="Node2D" parent="Hips/Chest/Head"]
+editor_description = "Add gun stuffs"
+
+[node name="WhiteEyeOverlay" type="Sprite2D" parent="Hips/Chest/Head"]
+visible = false
+texture = ExtResource("25_qsc1j")
+
+[node name="BackThigh" type="Sprite2D" parent="Hips"]
+position = Vector2(-3.5, 7)
+texture = ExtResource("21_vc2sj")
+
+[node name="HardFlip" type="Node" parent="Hips/BackThigh"]
+script = ExtResource("3_3k8yk")
+
+[node name="BackCalf" type="Sprite2D" parent="Hips/BackThigh"]
+position = Vector2(0.5, 14.5)
+texture = ExtResource("22_oeyvr")
+
+[node name="BackFoot" type="Sprite2D" parent="Hips/BackThigh/BackCalf"]
+position = Vector2(-1.5, 9.5)
+texture = ExtResource("23_l0imx")
+
+[node name="RotationConstraint2D" type="Node" parent="Hips/BackThigh/BackCalf/BackFoot" node_paths=PackedStringArray("Source")]
+script = ExtResource("18_na1u2")
+Source = NodePath("../../../..")
+Lock = true
+
+[node name="FrontThigh" type="Sprite2D" parent="Hips"]
+position = Vector2(2.5, 6.1)
+texture = ExtResource("15_t1f5s")
+
+[node name="HardFlip" type="Node" parent="Hips/FrontThigh"]
+script = ExtResource("3_3k8yk")
+
+[node name="FrontCalf" type="Sprite2D" parent="Hips/FrontThigh"]
+position = Vector2(1, 15.5)
+texture = ExtResource("16_082me")
+
+[node name="FrontFoot" type="Sprite2D" parent="Hips/FrontThigh/FrontCalf"]
+position = Vector2(-1, 9.4)
+texture = ExtResource("17_u1j1a")
+
+[node name="RotationConstraint2D" type="Node" parent="Hips/FrontThigh/FrontCalf/FrontFoot" node_paths=PackedStringArray("Source")]
+script = ExtResource("18_na1u2")
+Source = NodePath("../../../..")
+Lock = true
+
+[node name="Dust" type="Sprite2D" parent="Hips/FrontThigh/FrontCalf/FrontFoot"]
+visible = false
+position = Vector2(-3.5, -30)
+texture = ExtResource("19_kpu0j")
+offset = Vector2(-0.2, 0.5)
+flip_h = true
+
+[node name="NoSmoothSprite" type="Node" parent="Hips/FrontThigh/FrontCalf/FrontFoot/Dust"]
+script = ExtResource("20_k30b8")

@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://cpn4qobunh1og"]
+
+[ext_resource type="Texture2D" uid="uid://bssp7yuhtiida" path="res://andromeda/rocket_flares/rocket_flares.png" id="1_le06e"]
+
+[resource]
+atlas = ExtResource("1_le06e")
+region = Rect2(0, 0, 56, 128)

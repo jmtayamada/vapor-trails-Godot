@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://ckqluixqcdhdi"]
+
+[ext_resource type="Texture2D" uid="uid://cggmhbdjss2ta" path="res://val/jetflare/jet_flare.png" id="1_njlim"]
+
+[resource]
+atlas = ExtResource("1_njlim")
+region = Rect2(128, 0, 64, 64)

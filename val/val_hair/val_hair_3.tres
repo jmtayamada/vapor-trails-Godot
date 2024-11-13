@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://b7cqf6nfmhycf"]
+
+[ext_resource type="Texture2D" uid="uid://dvwixsu5864e" path="res://val/val_hair/val_hair.png" id="1_snqhl"]
+
+[resource]
+atlas = ExtResource("1_snqhl")
+region = Rect2(66, 0, 22, 18)

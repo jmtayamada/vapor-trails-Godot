@@ -1,0 +1,16 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://drvowi4xokuhw"]
+
+[ext_resource type="Texture2D" uid="uid://bvt5r8ej80emx" path="res://effects/foot_fall_dust/footfalldust_0.tres" id="1_4wjcj"]
+[ext_resource type="Texture2D" uid="uid://3v1f5j5joys5" path="res://effects/foot_fall_dust/footfalldust_1.tres" id="2_57r21"]
+[ext_resource type="Texture2D" uid="uid://dmlfvlbu507oy" path="res://effects/foot_fall_dust/footfalldust_2.tres" id="3_sy7y8"]
+[ext_resource type="Texture2D" uid="uid://d2qv6c765g5o" path="res://effects/foot_fall_dust/footfalldust_3.tres" id="4_23p1j"]
+
+[resource]
+frames = 4
+frame_0/texture = ExtResource("1_4wjcj")
+frame_1/texture = ExtResource("2_57r21")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_sy7y8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_23p1j")
+frame_3/duration = 1.0

@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="Vapor Trails"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/unity_components/plugin.cfg")
+
 [layer_names]
 
 2d_render/layer_1="Default"

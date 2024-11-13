@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://d2qv6c765g5o"]
+
+[ext_resource type="Texture2D" uid="uid://b5m6s5wyfd4hn" path="res://effects/foot_fall_dust/footfalldust.png" id="1_yaryt"]
+
+[resource]
+atlas = ExtResource("1_yaryt")
+region = Rect2(192, 0, 64, 64)
